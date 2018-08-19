@@ -1,0 +1,9 @@
+#FROM java:8
+#MAINTAINER oracle
+FROM alpine-jdk:base
+MAINTAINER javaonfly
+RUN apk --no-cache add netcat-openbsd
+COPY files/DashBoardService.jar /opt/lib/
+COPY Dashboard-entrypoint.sh /opt/bin/Dashboard-entrypoint.sh
+RUN chmod 755 /opt/bin/Dashboard-entrypoint.sh
+EXPOSE 8081

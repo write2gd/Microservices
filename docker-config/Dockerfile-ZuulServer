@@ -1,0 +1,8 @@
+#FROM java:8
+#MAINTAINER oracle
+FROM alpine-jdk:base
+MAINTAINER javaonfly
+COPY files/ZuulProxy.jar /opt/lib/
+ENTRYPOINT ["/usr/bin/java"]
+CMD ["-jar", "/opt/lib/ZuulProxy.jar"]
+EXPOSE 8084

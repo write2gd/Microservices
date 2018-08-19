@@ -1,0 +1,4 @@
+FROM alpine:edge
+MAINTAINER javaonfly
+RUN apk add --no-cache openjdk8
+RUN apk --no-cache add netcat-openbsd

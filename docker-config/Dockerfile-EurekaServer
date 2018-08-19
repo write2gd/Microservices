@@ -1,0 +1,8 @@
+#FROM java:8
+#MAINTAINER oracle
+FROM alpine-jdk:base
+MAINTAINER javaonfly
+COPY files/EmployeeEurekaServer.jar /opt/lib/
+ENTRYPOINT ["/usr/bin/java"]
+CMD ["-jar", "/opt/lib/EmployeeEurekaServer.jar"]
+EXPOSE 9091

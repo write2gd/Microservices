@@ -1,0 +1,8 @@
+docker build --tag=alpine-jdk:base --rm=true .
+docker build --file=Dockerfile-configserver --tag=config-server:latest --rm=true .
+docker build --file=Dockerfile-EurekaServer --tag=eureka-server:latest --rm=true .
+docker build --file=Dockerfile-EmployeeSearch --tag=employee-search:latest --rm=true .
+docker build --file=Dockerfile-EmployeeDashboard --tag=employee-dashboard:latest --rm=true .
+docker build --file=Dockerfile-ZuulServer --tag=zuul-server:latest --rm=true .
+docker-compose up --build > docker-compose.log
+docker-compose down

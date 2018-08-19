@@ -1,0 +1,9 @@
+#FROM java:8
+#MAINTAINER oracle
+FROM alpine-jdk:base
+MAINTAINER javaonfly
+RUN apk --no-cache add netcat-openbsd
+COPY files/SearchService.jar /opt/lib/
+COPY Search-entrypoint.sh /opt/bin/Search-entrypoint.sh
+RUN chmod 755 /opt/bin/Search-entrypoint.sh
+EXPOSE 8080
